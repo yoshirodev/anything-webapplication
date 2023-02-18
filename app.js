@@ -1,6 +1,5 @@
-let nameInput = document.getElementById("nameTextid").value;
 let isNamed = false;
-let nameVar;
+let jsonString;
 
 // Alpha Body
 function OnClick(){
@@ -50,10 +49,10 @@ function MiniTextBot() {
             if(!isNamed){
                 text = "I don't have a name yet. create one for me :)";
             }else{
-                text = "My Name is " + nameVar;
+                text = "My Name is " + jsonString;
             }
 
-            nameInpuBox.style.left = "30%";
+            nameInpuBox.style.left = "1%";
             break;
         case inputBox = "How are you?":
             text = "I'm good, how about you? :)";
@@ -72,20 +71,16 @@ function MiniTextBot() {
     document.getElementById("appheaderid").innerHTML = text;
 }
 
-function NameValue(){
-    if(nameInput.value !== null) {
+function SubmitName(){
+    let nameInput = document.getElementById("nameTextid").value;
+    jsonString = JSON.stringify(nameInput);
+    if(nameInput) {
         isNamed = true;
-        nameVar = nameInput.ToString();
+        nameDis = "Name: " + jsonString;
     }else{
         isNamed = false;
     }
-    document.getElementById("nameHeader").innerHTML = "Name: " + nameVar;
 }
 
 // Gamma Body
 
-function TestFunction(){
-    let data = require('./data.json');
-
-    alert(data);
-}
