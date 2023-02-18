@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <title>APPLICATION</title>
+
+    <body>
+        <div class="nav" id="navid"> 
+            <a href="#Alpha" class="">Alpha</a>
+            <a href="#Beta" class="">Beta</a>
+            <a href="#Gamma" class="">Gamma</a>
+            <a href="#Delta" class="">Delta</a>
+            <a href="#DevT">Developer's Area</a>
+        </div>
+
+        <div class="MainBody" id="MainBId">
+            <h1 style="text-align: center; color: white;">Different Apps</h1>
+        </div>
+
+        <div class="SecondBody" id="Alpha">
+            <button onclick="OnClick()" class="SButton1"></button>
+            <h1 style="text-align: center;" id="Sheader1">None</h1>
+
+            <div class="SObject" id="SObjectid"></div>
+        </div>
+
+        <div class="ThirdBody" id="Beta">
+            <h1 style="text-align: right; color: black;" id="nameHeader">Name:</h1>
+
+            <div class="dialougeBox">
+                <h1 class="appheader" id="appheaderid">Hello!! Say Something :)</h1>
+            </div>
+            <div class="inputBox">
+                <input type="text" id="inputText">
+                <button onclick="MiniTextBot()">Send</button>
+
+                <div class="nameText" id="nameInputBox">
+                    <input type="text" id="nameTextid">
+                    <button onclick="NameValue()">Name</button>
+                    <p>Name me | input a name</p>
+                </div>
+
+                <div class="link1" id="linkid1">
+                    <a href="https://yoshiro00.github.io/waifu-web/surprise.html"><button>Secret Link</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="FourthBody" id="Gamma">
+            
+        </div>
+
+        <div class="FifthBody" id="Delta">
+
+        </div>
+
+        <div class="DevTestingBody" id="DevT">
+            <button onclick="TestFunction()" class="TestButton" id="TestButtonID">Test Button</button>
+        </div>
+
+        <style>
+            body{
+                background-image: url(img/BG1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            .nav{
+                overflow: hidden;
+                background-color:  rgb(2, 9, 78);
+            }
+
+            .nav a{
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            .MainBody{
+                position: relative;
+                width: 26.7cm;
+                height: 20cm;
+                padding: 100px 110px;
+                background-color: transparent;
+                background-size: 1920px 1080px;
+            }
+
+            .SecondBody{
+                position: relative;
+                width: 26.7cm;
+                height: 20cm;
+                padding: 100px 110px;
+                background-image: url(img/BG2.jpg);
+                background-size: 1920px 1080px;
+            }
+
+            .SButton1{
+                position: absolute;
+                height: 100px;
+                width: 100px;
+                top: 50%;
+                left: 45%;
+            }
+
+            .SObject{
+                position: absolute;
+                background-image: url(img/Bocchi.png);
+                padding: 3px 5px;
+                height: 100px;
+                width: 100px;
+                background-size: 100px 100px;
+                transition: 5s;
+                top: 10px;
+                left: 10px;
+            }
+
+            .ThirdBody{
+                position: relative;
+                width: 26.7cm;
+                height: 20cm;
+                padding: 100px 110px;
+                background-image: url(img/BG3.jpg);
+                background-size: 1920px 1080px;
+            }
+
+            .inputBox{
+                position: absolute;
+                height: 100px;
+                width: 100px;
+                top: 50%;
+                left: 15%;
+            }
+
+            .nameText{
+                position: absolute;
+                top: 100px;
+                left: -1000%;
+                transition: 1s;
+            }
+
+            .dialougeBox{
+                position: absolute;
+                background-color: aliceblue;
+                box-shadow: 5px 10px;
+                padding: 80px 150px;
+                height: 100px;
+                width: 100px;
+                top: 10%;
+                left: 10%;
+            }
+
+            .link1{
+                position: absolute;
+                top: 80px;
+                left: -1000%;
+                transition: 1s;
+            }
+
+            .appheader{
+                position: absolute;
+                text-align: left;
+                left: 10px;
+                top: 10px;
+            }
+
+            .FourthBody{
+                position: relative;
+                width: 26.7cm;
+                height: 20cm;
+                padding: 100px 110px;
+                background-image: url(img/BG4.jpg);
+                background-size: 1920px 1080px;
+            }
+
+            .TestButton{
+                position: absolute;
+                height: 100px;
+                width: 100px;
+                top: 50%;
+                left: 45%;
+            }
+
+            .FifthBody{
+                position: relative;
+                width: 26.7cm;
+                height: 20cm;
+                padding: 100px 110px;
+                background-image: url(img/BG5.jpg);
+                background-size: 1920px 1080px;
+            }
+
+            .DevTestingBody{
+                position: relative;
+                width: 26.7cm;
+                height: 20cm;
+                padding: 100px 110px;
+                background-image: url(img/DevBG.jpg);
+                background-size: 1920px 1080px;
+            }
+        </style>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="data.json"></script>
+    </body>
+</html>
