@@ -1,1 +1,60 @@
-{"name":"John Doe", "age":"45"}
+{
+    "intents": [    
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "Hello",
+                "Hey there"
+            ],
+            "responses": [
+                "Hi, how can I help you?",
+                "Hello, what can I do for you?",
+                "Hey there, how can I assist you?"
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Bye",
+                "Goodbye",
+                "See you later"
+            ],
+            "responses": [
+                "Goodbye, have a nice day!",
+                "Bye, take care!",
+                "See you later, have a great day!"
+            ]
+        },
+        {
+            "tag": "questions1",
+            "patterns": [
+                "Who created you?",
+                "Who is your creator?",
+                "Who made you?"
+            ],
+            "responses": [
+                "The Group Called The Secret Dev Group",
+                "Yoshiro created me",
+                "Yoshiro is my creator",
+                "Yoshiro created me because he got nothin to do"
+            ]
+        },
+        {
+            "tag": "questions2",
+            "patterns": [
+                "What are you?",
+                "Are you a bot?",
+                "Are you an AI?",
+                "Are you a chatbot?",
+                "Tell me about yourself"
+            ],
+            "responses": [
+                "I am an AI created by the group called The Secret Dev Group. I am currently being trained, so I might not be able to answer some of your questions.",
+                "I am an artificial intelligence trained by the group called The Secret Dev Team. I am currently being trained, so I might not be able to answer some of your questions.",
+                "I am an AI under development.",
+                "I am an AI that is still under development, so I apologize if I can't answer some of your questions."
+            ]
+        }
+    ]
+}

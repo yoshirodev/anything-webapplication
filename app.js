@@ -36,6 +36,7 @@ function MiniTextBot() {
     let inputBox = document.getElementById("inputText").value;
     let nameInpuBox = document.getElementById("nameInputBox");
     let buttonShow = document.querySelector('#linkid1');
+    let epsilonButton = document.querySelector('#EpsilonAI');
     let text;
 
     let randomGreet = ["Hello", "Hi", "Greetings", "Sup", "Yo"];
@@ -65,6 +66,10 @@ function MiniTextBot() {
             text = "tap this link";
             buttonShow.style.left = "30%";
             break;
+        case inputBox = "Epsilon":
+            text = "tap this link";
+            epsilonButton.style.left = "30%";
+            break;
         default:
             text = "i don't know that word yet or maybe your missing something";
     }
@@ -82,5 +87,51 @@ function SubmitName(){
     }
 }
 
-// Gamma Body
+// Epsilon Body
+
+async function sendUserMessage() {
+    alert("1 called");
+    // Get user's message from input box
+    const userMessage = document.getElementById("messageBot").value;
+
+    // Send user's message to chatbot and wait for response
+    const chatbotResponse = await getChatbotResponse(userMessage);
+
+    // Display chatbot's response in the chat window
+    addBotMessage(chatbotResponse);
+}
+  
+
+async function getChatbotResponse(userMessage) {
+    alert("2 called");
+    try {
+    const response = await fetch('data.json');
+    const data = await response.json();
+    for (let i = 0; i < data.intents.length; i++) {
+        const intent = data.intents[i];
+        for (let j = 0; j < intent.patterns.length; j++) {
+        const pattern = intent.patterns[j];
+        if (userMessage.toLowerCase().includes(pattern.toLowerCase())) {
+            const response = intent.responses[Math.floor(Math.random() * intent.responses.length)];
+            return response;
+        }
+        }
+    }
+    return "I'm sorry, I didn't understand that, I'm still being trained so there might be some words that I don't understand yet.";
+    } catch (error) {
+    console.error(error);
+    }
+}
+
+function addBotMessage(message) {
+    alert("3 called");
+    const chatList = document.getElementById("chatList");
+    const messageItem = document.createElement("li");
+    messageItem.classList.add("bot-message");
+    messageItem.textContent = message;
+    chatList.appendChild(messageItem);
+}
+  
+  
+  
 

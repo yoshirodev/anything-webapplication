@@ -38,6 +38,12 @@
                     <p>Name me | input a name</p>
                 </div>
 
+                <div class="epsilonButtonDiv" id="EpsilonAI">
+                    <a href="bot.html">
+                        <button>Go to AI Epsilon</button>
+                    </a>
+                </div>
+
                 <div class="link1" id="linkid1">
                     <a href="https://yoshiro00.github.io/waifu-web/surprise.html"><button>Secret Link</button></a>
                 </div>
@@ -52,9 +58,22 @@
 
         </div>
 
+        <div class="ChatBotBody" id="Epsilon">
+            <div class="dialougeBoxBot" id="chatWindow">
+                <ul id="chatList">
+                    <li class="bot-message">Hi! How can I help you?</li>
+                </ul>
+            </div>
+            <div class="userInputBox">
+                <input type="text" id="messageBot" placeholder="Type your message here...">
+                <button onclick="sendUserMessage()">Send</button>
+            </div>
+        </div>
+
         <div class="DevTestingBody" id="DevT">
             <button onclick="TestFunction()" class="TestButton" id="TestButtonID">Test Button</button>
         </div>
+        
 
         <style>
             body{
@@ -191,6 +210,49 @@
                 padding: 100px 110px;
                 background-image: url(img/BG5.jpg);
                 background-size: 1920px 1080px;
+            }
+
+            
+            .ChatBotBody{
+                position: relative;
+                width: 26.7cm;
+                height: 20cm;
+                padding: 100px 110px;
+                background-image: url(img/AIBG.jpg);
+                background-size: 1920px 1080px;
+            }
+
+            .dialougeBoxBot{
+                position: absolute;
+                background-color: aliceblue;
+                box-shadow: 5px 10px;
+                padding: 80px 150px;
+                height: 300px;
+                width: 300px;
+                top: 10%;
+                left: 10%;
+            }
+
+            .userInputBox{
+                position: absolute;
+                height: 100px;
+                width: 100px;
+                top: 70%;
+                left: 15%;
+            }
+
+            .epsilonButtonDiv{
+                position: absolute;
+                top: 100px;
+                left: -1000%;
+                transition: 1s;
+            }
+
+            .bot-message{
+                position: absolute;
+                text-align: left;
+                left: 10px;
+                top: 10px;
             }
 
             .DevTestingBody{
