@@ -44,7 +44,7 @@ async function getChatbotResponse(userMessage) {
 
     if (bestMatch.index > -1) {
         const response = bestMatch.responses[Math.floor(Math.random() * bestMatch.responses.length)];
-        return { response, similarPatterns: bestMatch.similarPatterns };
+        return response;
     }
 
     return "I'm sorry, I didn't understand that, I'm still being trained so there might be some words that I don't understand yet.";
