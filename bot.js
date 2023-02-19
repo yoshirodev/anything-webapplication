@@ -11,6 +11,8 @@ async function sendUserMessage() {
     document.getElementById("messageBot").value = "";
 }
 
+const stringSimilarity = require('string-similarity');
+
 async function getChatbotResponse(userMessage) {
     try {
     const files = ['data1.json', 'data2.json', 'data3.json'];
