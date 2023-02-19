@@ -3,6 +3,12 @@
         {
             "tag": "greeting",
             "patterns": [
+                "Hey",
+                "Heya",
+                "Heyo",
+                "Wazzap",
+                "Wazap",
+                "Ey",
                 "Hi",
                 "Hello",
                 "Hey there"
