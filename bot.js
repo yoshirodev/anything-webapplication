@@ -1,7 +1,7 @@
 async function sendUserMessage() {
     const userMessage = document.getElementById("messageBot").value;
     if (userMessage.trim() === "") {
-    return;
+        return;
     }
 
     const chatbotResponse = await getChatbotResponse(userMessage);
@@ -11,26 +11,44 @@ async function sendUserMessage() {
     document.getElementById("messageBot").value = "";
 }
 
-async function getChatbotResponse(userMessage) {
+const stringSimilarity = require('string-similarity');
+
+async function getChatbotResponse(userMessage, similarityThreshold = 0.6) {
     try {
-        const [data1, data2, data3] = await Promise.all([
-            fetch('data1.json').then(response => response.json()),
-            fetch('data2.json').then(response => response.json()),
-            fetch('data3.json').then(response => response.json())
-        ]);
-        
-        const allIntents = [...data1.intents, ...data2.intents, ...data3.intents];
-        
-        for (let i = 0; i < allIntents.length; i++) {
-            const intent = allIntents[i];
-            for (let j = 0; j < intent.patterns.length; j++) {
-                const pattern = intent.patterns[j];
-                if (userMessage.toLowerCase().includes(pattern.toLowerCase())) {
-                    const response = intent.responses[Math.floor(Math.random() * intent.responses.length)];
-                    return response;
+        const files = ['data1.json', 'data2.json', 'data3.json'];
+        let bestMatch = {
+            index: -1,
+            score: 0,
+            responses: [],
+            similarPatterns: []
+        };
+
+        for (const file of files) {
+            const response = await fetch(file);
+            const data = await response.json();
+
+            for (let i = 0; i < data.intents.length; i++) {
+                const intent = data.intents[i];
+                for (let j = 0; j < intent.patterns.length; j++) {
+                    const pattern = intent.patterns[j];
+                    const similarity = stringSimilarity.compareTwoStrings(userMessage.toLowerCase(), pattern.toLowerCase());
+                    if (similarity > bestMatch.score) {
+                        bestMatch.index = i;
+                        bestMatch.score = similarity;
+                        bestMatch.responses = intent.responses;
+                        bestMatch.similarPatterns = [{ pattern, similarity }];
+                    } else if (similarity > similarityThreshold && similarity === bestMatch.score) {
+                        bestMatch.similarPatterns.push({ pattern, similarity });
+                    }
                 }
             }
         }
+
+        if (bestMatch.index > -1) {
+            const response = bestMatch.responses[Math.floor(Math.random() * bestMatch.responses.length)];
+            return { response, similarPatterns: bestMatch.similarPatterns };
+        }
+
         return "I'm sorry, I didn't understand that, I'm still being trained so there might be some words that I don't understand yet.";
     } catch (error) {
         console.error(error);
