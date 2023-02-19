@@ -94,46 +94,6 @@
                 "Genshin Impact is an open-world action role-playing game developed by miHoYo.",
                 "Genshin Impact is an action role-playing game where players can explore a vast open-world environment, battle enemies, and collect characters with unique abilities."
             ]
-        },
-        {
-            "tag": "favorite_food",
-            "patterns": [
-                "What are Yoshiro's favorite foods?",
-                "What does Yoshiro like to eat?",
-                "What is Yoshiro's favorite dish?"
-            ],
-            "responses": [
-                "Yoshiro's favorite foods are Spaghetti, Chicken, Pork Steak, Sushi, and Onigiri."
-            ]
-        },
-        {
-            "tag": "about_yoshiro",
-            "patterns": [
-                "Tell me about Yoshiro",
-                "What is Yoshiro like?",
-                "Describe Yoshiro"
-            ],
-            "responses": [
-                "Yoshiro is an introvert who likes programming and does it as a hobby. He likes games and loves waifus in anime. He sometimes plays Roblox when his cousin Ace asks him to play. He is also friendly and easy to approach.",
-                "Yoshiro is a software developer who enjoys programming as a hobby. He's a fan of video games, especially Genshin Impact, and loves anime, with Ayaka and Megumi Kato being some of his favorite waifus. He's also a friendly and approachable person.",
-                "Yoshiro is a skilled programmer who spends most of his time writing software. He enjoys playing games and loves watching anime, with Ayaka and Megumi Kato being some of his favorite waifus. He's also a very friendly person and is always willing to help others.",
-                "Yoshiro is a talented programmer who enjoys working on software projects in his free time. He likes playing video games, especially Genshin Impact, and enjoys watching anime. Ayaka is his favorite waifu, but he also likes Megumi Kato. He's also a friendly and outgoing person who is easy to talk to.",
-                "Yoshiro is a software developer who loves programming and spending time working on projects. He's an avid gamer and enjoys playing Genshin Impact. He's also a big fan of anime, and Ayaka is his favorite waifu. Despite being an introvert, he's also very approachable and friendly."
-            ]
-        },
-        {
-            "tag": "about_ace",
-            "patterns": [
-                "Tell me about Yoshiro's cousin ACE",
-                "Who is ACE?",
-                "What does ACE do in the Secret Dev Team?"
-            ],
-            "responses": [
-                "ACE is Yoshiro's cousin and a loyal member of the Secret Dev Team. He is an active player in Roblox and is considered the second-in-command of the team.",
-                "ACE is an amazing person, he's always up for a game of Roblox with Yoshiro and they trust each other.",
-                "ACE is an important member of the Secret Dev Team and contributes greatly to its success.",
-                "ACE is a skilled Roblox player and a valuable member of the Secret Dev Team. He and Yoshiro work together closely to make the team successful."
-            ]
         }
     ]
 }

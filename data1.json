@@ -100,26 +100,6 @@
             "responses": [
                 "Yoshiro's favorite waifus are Ayaka from Genshin Impact and Megumi Kato from Saekano anime."
             ]
-        },
-        {
-            "tag": "favorite_game",
-            "patterns": [
-                "What is Yoshiro's favorite game?",
-                "What game does Yoshiro like to play?"
-            ],
-            "responses": [
-                "Yoshiro's favorite game is Genshin Impact."
-            ]
-        },
-        {
-            "tag": "hobbies",
-            "patterns": [
-                "What does Yoshiro like to do?",
-                "What are Yoshiro's hobbies?"
-            ],
-            "responses": [
-                "Yoshiro likes to program and make software, play games, and eat food."
-            ]
         }
     ]
 }
