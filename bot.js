@@ -1,17 +1,13 @@
 async function sendUserMessage() {
-    // Get user's message from input box
     const userMessage = document.getElementById("messageBot").value;
     if (userMessage.trim() === "") {
     return;
     }
 
-    // Send user's message to chatbot and wait for response
     const chatbotResponse = await getChatbotResponse(userMessage);
 
-    // Display chatbot's response in the chat window
     addBotMessage(chatbotResponse);
 
-    // Clear user's message from input box
     document.getElementById("messageBot").value = "";
 }
 
