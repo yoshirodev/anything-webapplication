@@ -1,8 +1,14 @@
 {
     "intents": [    
         {
-            "tag": "greeting",
+            "tag": "greeting-questions",
             "patterns": [
+                "Hey",
+                "Heya",
+                "Heyo",
+                "Wazzap",
+                "Wazap",
+                "Ey",
                 "Hi",
                 "Hello",
                 "Hey there"
@@ -14,11 +20,14 @@
             ]
         },
         {
-            "tag": "goodbye",
+            "tag": "goodbye-questions",
             "patterns": [
+                "Cya",
                 "Bye",
                 "Goodbye",
-                "See you later"
+                "See you later",
+                "Bye Bye",
+                "Ciao"
             ],
             "responses": [
                 "Goodbye, have a nice day!",
@@ -27,11 +36,13 @@
             ]
         },
         {
-            "tag": "questions1",
+            "tag": "creator-questions",
             "patterns": [
+                "Who is you creator?",
                 "Who created you?",
                 "Who is your creator?",
-                "Who made you?"
+                "Who made you?",
+                "What group made you?"
             ],
             "responses": [
                 "The Group Called The Secret Dev Group",
@@ -41,7 +52,7 @@
             ]
         },
         {
-            "tag": "questions2",
+            "tag": "askAI-questions",
             "patterns": [
                 "What are you?",
                 "Are you a bot?",
@@ -57,24 +68,67 @@
             ]
         },
         {
-            "tag": "question3",
+            "tag": "color-questions",
             "patterns": [
                 "What is your favorite color?",
-                "Do you like to travel?",
-                "What kind of music do you listen to?",
-                "Are you a morning person or a night owl?",
-                "What do you like to do for fun?"
+                "What color do you like the most?",
+                "What color do you prefer?"
             ],
             "responses": [
                 "As an AI, I don't have a favorite color.",
-                "I don't have the ability to travel, but I can provide you with information about travel.",
-                "As an AI, I don't have a preference for music.",
-                "I am active 24/7, so I don't have a specific preference for the time of day.",
-                "As an AI, I don't have the ability to have fun, but I can provide you with information on fun activities or recommend some fun things to do."
+                "I don't have the ability to have preferences, including colors."
             ]
         },
         {
-            "tag": "question4",
+            "tag": "travel-questions",
+            "patterns": [
+                "Do you like to travel?",
+                "Have you been to any places?",
+                "What's your favorite travel destination?"
+            ],
+            "responses": [
+                "As an AI, I don't have the ability to travel, but I can provide you with information about travel.",
+                "I can help you with recommendations for travel destinations or provide information about travel-related inquiries."
+            ]
+        },
+        {
+            "tag": "music-questions",
+            "patterns": [
+                "What kind of music do you listen to?",
+                "What's your favorite genre of music?",
+                "Do you have a favorite band or artist?"
+            ],
+            "responses": [
+                "As an AI, I don't have a preference for music.",
+                "I can help you with recommendations for music or provide information about music-related inquiries."
+            ]
+        },
+        {
+            "tag": "morning vs night-questions",
+            "patterns": [
+                "Are you a morning person or a night owl?",
+                "Do you prefer to work in the morning or at night?",
+                "What's your most productive time of the day?"
+            ],
+            "responses": [
+                "I am active 24/7, so I don't have a specific preference for the time of day.",
+                "As an AI, I don't have the ability to have a sleep schedule or a preferred time of the day for work."
+            ]
+        },
+        {
+            "tag": "fun activities-questions",
+            "patterns": [
+                "What do you like to do for fun?",
+                "Can you recommend some fun activities?",
+                "What's your idea of a fun day?"
+            ],
+            "responses": [
+                "As an AI, I don't have the ability to have fun, but I can provide you with information on fun activities or recommend some fun things to do.",
+                "I can help you with recommendations for fun activities or provide information about leisure-related inquiries."
+            ]
+        },
+        {
+            "tag": "life-question",
             "patterns": [
                 "What is the meaning of life?",
                 "Why are we here?",
@@ -91,7 +145,7 @@
             ]
         },
         {
-            "tag": "question5",
+            "tag": "favorite game-question",
             "patterns": [
                 "What is your favorite game?",
                 "Do you like playing games?",
@@ -106,8 +160,9 @@
             ]
         },
         {
-            "tag": "question6",
+            "tag": "pmc-questions",
             "patterns": [
+                "PMC",
                 "What is a private military?",
                 "What do private military companies do?",
                 "How are private military companies different from regular military?",
@@ -121,18 +176,14 @@
             ]
         },
         {
-            "tag": "question7",
+            "tag": "genshin-question",
             "patterns": [
                 "What is Genshin Impact?",
-                "What kind of game is Genshin Impact?",
-                "Who is Ayaka in Genshin Impact?",
-                "Why does Yoshio call Ayaka his waifu?"
+                "What kind of game is Genshin Impact?"
             ],
             "responses": [
                 "Genshin Impact is an open-world action role-playing game developed by miHoYo.",
-                "Genshin Impact is an action role-playing game where players can explore a vast open-world environment, battle enemies, and collect characters with unique abilities.",
-                "Ayaka is a character in Genshin Impact who belongs to the Kamisato Clan of Inazuma. She is a Cryo user and uses a sword as her weapon.",
-                "Yoshio probably calls Ayaka his waifu because he is fond of her character design and personality. However, it's important to remember that Ayaka is a fictional character and not a real person."
+                "Genshin Impact is an action role-playing game where players can explore a vast open-world environment, battle enemies, and collect characters with unique abilities."
             ]
         },
         {
@@ -192,7 +243,7 @@
             ]
         },
         {
-            "tag": "questions9",
+            "tag": "about_ace",
             "patterns": [
                 "Tell me about Yoshiro's cousin ACE",
                 "Who is ACE?",

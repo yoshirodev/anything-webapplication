@@ -17,8 +17,17 @@ async function sendUserMessage() {
 
 async function getChatbotResponse(userMessage) {
     try {
-    const response = await fetch('data.json');
-    const data = await response.json();
+    // Load data from two JSON files
+    const response1 = await fetch('data1.json');
+    const response2 = await fetch('data2.json');
+    const data1 = await response1.json();
+    const data2 = await response2.json();
+
+    // Combine data from both files into one object
+    const data = {
+        intents: [...data1.intents, ...data2.intents]
+    };
+
     for (let i = 0; i < data.intents.length; i++) {
         const intent = data.intents[i];
         for (let j = 0; j < intent.patterns.length; j++) {
@@ -34,6 +43,7 @@ async function getChatbotResponse(userMessage) {
     console.error(error);
     }
 }
+
 
 function addBotMessage(message) {
     const chatList = document.getElementById("chatList");
