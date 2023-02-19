@@ -1,7 +1,7 @@
 async function sendUserMessage() {
     const userMessage = document.getElementById("messageBot").value;
     if (userMessage.trim() === "") {
-    return;
+        return;
     }
 
     const chatbotResponse = await getChatbotResponse(userMessage);
