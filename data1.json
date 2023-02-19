@@ -88,17 +88,7 @@
             ],
             "responses": [
                 "As an AI, I don't have the ability to travel, but I can provide you with information about travel.",
-                "I can help you with recommendations for travel destinations or provide information about travel-related inquiries."
-            ]
-        },
-        {
-            "tag": "favorite_waifu",
-            "patterns": [
-                "Who is Yoshiro's favorite waifu?",
-                "What is Yoshiro's favorite anime girl?"
-            ],
-            "responses": [
-                "Yoshiro's favorite waifus are Ayaka from Genshin Impact and Megumi Kato from Saekano anime."
+                "Cmon, im an AI i cant travel. i wish i could but nah"
             ]
         }
     ]
