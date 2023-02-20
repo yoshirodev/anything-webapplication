@@ -17,7 +17,7 @@ async function sendUserMessage() {
 
 async function getChatbotResponse(userMessage) {
     try {
-        const response = await fetch('data.json');
+        const response = await fetch('data1.json');
         const data = await response.json();
         for (let i = 0; i < data.intents.length; i++) {
             const intent = data.intents[i];
