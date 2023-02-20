@@ -1,6 +1,6 @@
 const stringSimilarity = require('string-similarity');
 
-async function sendUserMessage() {
+async function sendMessage() {
     const userMessage = document.getElementById("messageBot").value;
     if (userMessage.trim() === "") {
         return;
