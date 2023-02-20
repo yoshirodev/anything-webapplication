@@ -1,17 +1,13 @@
 async function sendUserMessage() {
-    // Get user's message from input box
     const userMessage = document.getElementById("messageBot").value;
     if (userMessage.trim() === "") {
         return;
     }
 
-    // Send user's message to chatbot and wait for response
     const chatbotResponse = await getChatbotResponse(userMessage);
 
-    // Display chatbot's response in the chat window
     addBotMessage(chatbotResponse);
 
-    // Clear user's message from input box
     document.getElementById("messageBot").value = "";
 }
 
@@ -23,10 +19,8 @@ async function getChatbotResponse(userMessage) {
             const intent = data.intents[i];
             for (let j = 0; j < intent.patterns.length; j++) {
                 const pattern = intent.patterns[j];
-                // Use Levenshtein distance algorithm to calculate the similarity
                 const distance = levenshteinDistance(userMessage.toLowerCase(), pattern.toLowerCase());
                 const similarity = 1 - (distance / Math.max(userMessage.length, pattern.length));
-                // Define a threshold for the maximum allowed distance
                 const threshold = 0.8;
                 if (similarity >= threshold) {
                     const response = intent.responses[Math.floor(Math.random() * intent.responses.length)];
@@ -56,9 +50,9 @@ function levenshteinDistance(a, b) {
             matrix[i][j] = matrix[i - 1][j - 1];
             } else {
                 matrix[i][j] = Math.min(
-                    matrix[i - 1][j - 1] + 1, // substitution
-                    matrix[i][j - 1] + 1,     // insertion
-                    matrix[i - 1][j] + 1      // deletion
+                    matrix[i - 1][j - 1] + 1, 
+                    matrix[i][j - 1] + 1,     
+                    matrix[i - 1][j] + 1      
                 );
             }
         }
