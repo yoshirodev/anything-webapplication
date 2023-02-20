@@ -1,3 +1,5 @@
+// MAIN ARTIFICIAL INTELIGENCE SOFTWARE
+
 async function sendUserMessage() {
     const userMessage = document.getElementById("messageBot").value;
     if (userMessage.trim() === "") {
@@ -68,3 +70,12 @@ function addBotMessage(message) {
     messageItem.textContent = message;
     chatList.appendChild(messageItem);
 }
+
+
+// SUB FUNCTIONS
+
+let sendButtonCheck = document.getElementById('sendButtonCLC');
+
+sendButtonCheck.addEventListener('click', () => {
+    console.log("Clicked");
+});

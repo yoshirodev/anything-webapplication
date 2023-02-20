@@ -3,15 +3,15 @@
         {
             "tag": "greeting-questions",
             "patterns": [
-                "Hey!!!",
-                "Heya!!!",
-                "Heyo!!!",
-                "Wazzap!!!",
-                "Wazap!!!",
-                "Ey!!!",
-                "Hi!!!",
-                "Hello!!!",
-                "Hey there!!!"
+                "Hey",
+                "Heya",
+                "Heyo",
+                "Wazzap",
+                "Wazap",
+                "Ey",
+                "Hi",
+                "Hello",
+                "Hey there"
             ],
             "responses": [
                 "Hi, how can I help you?",
