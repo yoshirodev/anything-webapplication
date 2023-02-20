@@ -1,4 +1,4 @@
-const stringSimilarity = require('string-similarity');
+//const stringSimilarity = require('string-similarity');
 
 async function sendMessage() {
     const userMessage = document.getElementById("messageBot").value;
