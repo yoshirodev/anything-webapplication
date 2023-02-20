@@ -19,7 +19,9 @@ async function sendUserMessage() {
 
 async function getChatbotResponse(userMessage, similarityThreshold = 0.6) {
     try {
-        const files = ['data1.json', 'data2.json', 'data3.json'];
+        const response = await fetch('data1.json');
+        const data = await response.json();
+
         let bestMatch = {
             index: -1,
             score: 0,
@@ -27,23 +29,18 @@ async function getChatbotResponse(userMessage, similarityThreshold = 0.6) {
             similarPatterns: []
         };
 
-        for (const file of files) {
-            const response = await fetch(file);
-            const data = await response.json();
-
-            for (let i = 0; i < data.intents.length; i++) {
-                const intent = data.intents[i];
-                for (let j = 0; j < intent.patterns.length; j++) {
-                    const pattern = intent.patterns[j];
-                    const similarity = stringSimilarity.compareTwoStrings(userMessage.toLowerCase(), pattern.toLowerCase());
-                    if (similarity > bestMatch.score) {
-                        bestMatch.index = i;
-                        bestMatch.score = similarity;
-                        bestMatch.responses = intent.responses;
-                        bestMatch.similarPatterns = [{ pattern, similarity }];
-                    } else if (similarity > similarityThreshold && similarity === bestMatch.score) {
-                        bestMatch.similarPatterns.push({ pattern, similarity });
-                    }
+        for (let i = 0; i < data.intents.length; i++) {
+            const intent = data.intents[i];
+            for (let j = 0; j < intent.patterns.length; j++) {
+                const pattern = intent.patterns[j];
+                const similarity = stringSimilarity.compareTwoStrings(userMessage.toLowerCase(), pattern.toLowerCase());
+                if (similarity > bestMatch.score) {
+                    bestMatch.index = i;
+                    bestMatch.score = similarity;
+                    bestMatch.responses = intent.responses;
+                    bestMatch.similarPatterns = [{ pattern, similarity }];
+                } else if (similarity > similarityThreshold && similarity === bestMatch.score) {
+                    bestMatch.similarPatterns.push({ pattern, similarity });
                 }
             }
         }
